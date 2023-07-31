@@ -1,5 +1,39 @@
 import pandas as pd
+import polars as pl
 
+
+import pandas as pd
+
+def _remove_missing_values(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Function to remove all rows with missing values in a pandas dataframe.
+    
+    Args:
+        df (pd.DataFrame): Input pandas DataFrame
+    
+    Returns:
+        pd.DataFrame: Output DataFrame with rows containing missing values removed.
+    """
+    # The dropna method removes any row with at least one missing value
+    df_cleaned = df.dropna()
+
+    return df_cleaned
+
+def preprocess_scope3(scope3_data: pd.DataFrame) -> pd.DataFrame:
+    """Preprocesses the Scope 3 data.
+
+    Args:
+        scope3_data: Raw data.
+        
+    Returns:
+        Preprocessed data, with missing values removed.
+    """
+    
+    scope3_data = _remove_missing_values(scope3_data)
+    return scope3_data
+
+
+# TEMPLATE
 
 def _is_true(x: pd.Series) -> pd.Series:
     return x == "t"

@@ -70,14 +70,18 @@ regressor:
   filepath: data/06_models/regressor.pickle
   versioned: true
 
-IWA-External-Scope-3-Data-3%:
+scope3_data_3:
   type: pandas.ExcelDataSet
   filepath: data/01_raw/IWA-External-Scope-3-Data.xlsx
   load_args:
     sheet_name: 3%
 
-IWA-External-Scope-3-Data-0%:
+scope3_data_0:
   type: pandas.ExcelDataSet
   filepath: data/01_raw/IWA-External-Scope-3-Data.xlsx
   load_args:
     sheet_name: 0%
+
+preprocessed_scope3:
+  type: pandas.ExcelDataSet
+  filepath: data/02_intermediate/preprocessed_scope3.pq
