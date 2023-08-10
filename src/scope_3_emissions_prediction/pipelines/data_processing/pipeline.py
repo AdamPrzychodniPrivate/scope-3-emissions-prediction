@@ -8,7 +8,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         [
             node(
                 func=preprocess_scope3,
-                inputs="scope3_data_3",
+                inputs=["scope3_data_3", "params:feature_options"],
                 outputs="preprocessed_scope3",
                 name="preprocess_scope3_node",
             ),

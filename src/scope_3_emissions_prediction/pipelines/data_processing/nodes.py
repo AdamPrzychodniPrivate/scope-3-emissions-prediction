@@ -1,6 +1,6 @@
 import pandas as pd
 import polars as pl
-
+from typing import Dict
 
 import pandas as pd
 
@@ -19,7 +19,7 @@ def _remove_missing_values(df: pd.DataFrame) -> pd.DataFrame:
 
     return df_cleaned
 
-def preprocess_scope3(scope3_data: pd.DataFrame) -> pd.DataFrame:
+def preprocess_scope3(scope3_data: pd.DataFrame, parameters: Dict) -> pd.DataFrame:
     """Preprocesses the Scope 3 data.
 
     Args:
@@ -29,8 +29,9 @@ def preprocess_scope3(scope3_data: pd.DataFrame) -> pd.DataFrame:
         Preprocessed data, with missing values removed.
     """
     
-    scope3_data = _remove_missing_values(scope3_data)
-    return scope3_data
+    features = scope3_data[parameters["features"]]
+    preprocessed_data = _remove_missing_values(features)
+    return preprocessed_data
 
 
 # TEMPLATE
