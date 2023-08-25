@@ -4,6 +4,7 @@ from typing import Dict
 
 import pandas as pd
 
+
 def _remove_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     """
     Function to remove all rows with missing values in a pandas dataframe.
@@ -14,10 +15,11 @@ def _remove_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Output DataFrame with rows containing missing values removed.
     """
-    # The dropna method removes any row with at least one missing value
+
     df_cleaned = df.dropna()
 
     return df_cleaned
+
 
 def preprocess_scope3(scope3_data: pd.DataFrame, parameters: Dict) -> pd.DataFrame:
     """Preprocesses the Scope 3 data.
