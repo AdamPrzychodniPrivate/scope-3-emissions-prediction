@@ -2,18 +2,10 @@
 
 ## Overview
 
-This is your new Kedro project for the [spaceflights tutorial](https://kedro.readthedocs.io/en/stable/tutorial/spaceflights_tutorial.html), which was generated using `Kedro 0.18.10`.
+This is project based on research paper by George Serafeim and Gladys Vélez Caicedo from Havard Business School
+[Machine Learning Models for Prediction of Scope 3 Carbon Emissions](https://www.hbs.edu/ris/Publication%20Files/22%20080_035d70d9-3acf-4faa-aa93-534e52a52d0e.pdf).
 
-Take a look at the [Kedro documentation](https://kedro.readthedocs.io) to get started.
-
-## Rules and guidelines
-
-In order to get the best out of the template:
-
-* Don't remove any lines from the `.gitignore` file we provide
-* Make sure your results can be reproduced by following a [data engineering convention](https://kedro.readthedocs.io/en/stable/faq/faq.html#what-is-data-engineering-convention)
-* Don't commit data to your repository
-* Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/`
+Based on provided in the research [dataset](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiEmPzH_IGBAxXH_rsIHV1ZB8kQFnoECA4QAQ&url=https%3A%2F%2Fwww.hbs.edu%2Fimpact-weighted-accounts%2FDocuments%2FIWA-External-Scope-3-Data.xlsx&usg=AOvVaw2HzIPtLsvHCWiHQKA5o_m8&opi=89978449) I try to use diffrent approaches to model and predict value of the Scope 3 Carbon Emissions.
 
 ## How to install dependencies
 
