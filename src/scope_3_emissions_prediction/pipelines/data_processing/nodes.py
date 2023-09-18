@@ -1,8 +1,5 @@
 import pandas as pd
-import polars as pl
 from typing import Dict
-
-import pandas as pd
 
 
 def _remove_missing_values(df: pd.DataFrame) -> pd.DataFrame:
