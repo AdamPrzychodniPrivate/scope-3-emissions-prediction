@@ -1,6 +1,5 @@
 feature_options:
   features:
-    - Country
     - Industry (Exiobase)
     - Business Travel
     - Capital Goods
