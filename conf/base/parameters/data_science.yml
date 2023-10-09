@@ -15,6 +15,7 @@ model_options:
     - Upstream Transportation and Distribution
     - Use of Sold Products
     - Waste Generated in Operations
+    - Scope 3
     - Use of Sold Products_x_Processing of Sold Products
     - Use of Sold Products_x_Purchased Goods and Services
     - Processing of Sold Products_x_Purchased Goods and Services
@@ -50,7 +51,6 @@ model_options:
     - Industry (Exiobase)_Paper
     - Industry (Exiobase)_Post and telecommunications (64)
     - Industry (Exiobase)_Processing of Food products nec
-    - Industry (Exiobase)_Production of electricity by hydro
     - Industry (Exiobase)_Production of electricity by nuclear
     - Industry (Exiobase)_Production of electricity nec
     - Industry (Exiobase)_Public administration and defence; compulsory social security (75)
