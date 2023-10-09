@@ -7,6 +7,18 @@ This is project based on research paper by George Serafeim and Gladys Vélez Ca
 
 Based on provided in the research [dataset](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiEmPzH_IGBAxXH_rsIHV1ZB8kQFnoECA4QAQ&url=https%3A%2F%2Fwww.hbs.edu%2Fimpact-weighted-accounts%2FDocuments%2FIWA-External-Scope-3-Data.xlsx&usg=AOvVaw2HzIPtLsvHCWiHQKA5o_m8&opi=89978449) I try to use diffrent approaches to model and predict value of the Scope 3 Carbon Emissions.
 
+## How to create a new virtual environment using conda
+
+The recommended approach. From your terminal:
+```
+conda create --name kedro-environment python=3.10 -y
+```
+
+Activate your environment
+```
+conda activate kedro-environment
+```
+
 ## How to install dependencies
 
 Declare any dependencies in `src/requirements.txt` for `pip` installation and `src/environment.yml` for `conda` installation.
