@@ -29,12 +29,20 @@ To install them, run:
 pip install -r src/requirements.txt
 ```
 
-## How to run your Kedro pipeline
+# How to run Kedro pipeline
 
 You can run your Kedro project with:
 
 ```
 kedro run
+```
+
+# How to visualize Kedro pipeline
+
+You can visualize Kedro project with:
+
+```
+kedro viz
 ```
 
 ## How to test your Kedro project
