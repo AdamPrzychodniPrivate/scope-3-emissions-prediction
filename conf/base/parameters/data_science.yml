@@ -2,11 +2,63 @@ model_options:
   test_size: 0.2
   random_state: 3
   features:
-    - engines
-    - passenger_capacity
-    - crew
-    - d_check_complete
-    - moon_clearance_complete
-    - iata_approved
-    - company_rating
-    - review_scores_rating
+    - Business Travel
+    - Capital Goods
+    - Downstream Leased Assets
+    - Downstream Transportation and Distribution
+    - Employee Commuting
+    - End of Life Treatment of Sold Products
+    - Fuel-and-energy-related activities (not included in Scope 1 or 2)
+    - Processing of Sold Products
+    - Purchased Goods and Services
+    - Upstream Leased Assets
+    - Upstream Transportation and Distribution
+    - Use of Sold Products
+    - Waste Generated in Operations
+    - Scope 3
+    - Use of Sold Products_x_Processing of Sold Products
+    - Use of Sold Products_x_Purchased Goods and Services
+    - Processing of Sold Products_x_Purchased Goods and Services
+    - Purchased Goods and Services_x_End of Life Treatment of Sold Products
+    - Use of Sold Products_Squared
+    - Processing of Sold Products_Squared
+    - Purchased Goods and Services_Squared
+    - End of Life Treatment of Sold Products_Squared
+    - Industry (Exiobase)_Activities auxiliary to financial intermediation (67)
+    - Industry (Exiobase)_Air transport (62)
+    - Industry (Exiobase)_Chemicals nec
+    - Industry (Exiobase)_Computer and related activities (72)
+    - Industry (Exiobase)_Construction (45)
+    - Industry (Exiobase)_Extraction of crude petroleum and services related to crude oil extraction, excluding surveying
+    - Industry (Exiobase)_Financial intermediation, except insurance and pension funding (65)
+    - Industry (Exiobase)_Health and social work (85)
+    - Industry (Exiobase)_Manufacture of basic iron and steel and of ferro-alloys and first products thereof
+    - Industry (Exiobase)_Manufacture of beverages
+    - Industry (Exiobase)_Manufacture of electrical machinery and apparatus n.e.c. (31)
+    - Industry (Exiobase)_Manufacture of fabricated metal products, except machinery and equipment (28)
+    - Industry (Exiobase)_Manufacture of machinery and equipment n.e.c. (29)
+    - Industry (Exiobase)_Manufacture of medical, precision and optical instruments, watches and clocks (33)
+    - Industry (Exiobase)_Manufacture of motor vehicles, trailers and semi-trailers (34)
+    - Industry (Exiobase)_Manufacture of office machinery and computers (30)
+    - Industry (Exiobase)_Manufacture of radio, television and communication equipment and apparatus (32)
+    - Industry (Exiobase)_Manufacture of rubber and plastic products (25)
+    - Industry (Exiobase)_Manufacture of wearing apparel; dressing and dyeing of fur (18)
+    - Industry (Exiobase)_Mining of chemical and fertilizer minerals, production of salt, other mining and quarrying n.e.c.
+    - Industry (Exiobase)_Mining of other non-ferrous metal ores and concentrates
+    - Industry (Exiobase)_Other
+    - Industry (Exiobase)_Other land transport
+    - Industry (Exiobase)_Other service activities (93)
+    - Industry (Exiobase)_Paper
+    - Industry (Exiobase)_Post and telecommunications (64)
+    - Industry (Exiobase)_Processing of Food products nec
+    - Industry (Exiobase)_Production of electricity by nuclear
+    - Industry (Exiobase)_Production of electricity nec
+    - Industry (Exiobase)_Public administration and defence; compulsory social security (75)
+    - Industry (Exiobase)_Publishing, printing and reproduction of recorded media (22)
+    - Industry (Exiobase)_Quarrying of sand and clay
+    - Industry (Exiobase)_Real estate activities (70)
+    - Industry (Exiobase)_Renting of machinery and equipment without operator and of personal and household goods (71)
+    - Industry (Exiobase)_Research and development (73)
+    - Industry (Exiobase)_Retail trade, except of motor vehicles and motorcycles; repair of personal and household goods (52)
+    - Industry (Exiobase)_Sea and coastal water transport
+    - Industry (Exiobase)_Transport via railways
