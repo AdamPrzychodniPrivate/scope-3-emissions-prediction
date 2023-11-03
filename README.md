@@ -120,4 +120,15 @@ To automatically strip out all output cell contents before committing to `git`, 
 
 > *Note:* Your output cells will be retained locally.
 
+If you want to use MakinaRocks for visualization of pipeline inside the notebook you can run
 
+```
+python3 -m pip install mrx-link
+```
+
+After installation, enter the following code to execute Jupyter Lab.
+```
+python3 -m jupyterlab
+```
+
+Open Notebook register in Makina Rocks and explore the pipeline inside :)
