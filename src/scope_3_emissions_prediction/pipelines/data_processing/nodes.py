@@ -4,33 +4,54 @@ from sklearn.ensemble import IsolationForest
 from sklearn.preprocessing import StandardScaler
 
 
-def _remove_missing_values(df: pd.DataFrame) -> pd.DataFrame:
-    df_cleaned = df.dropna()
+# def _remove_missing_values(df: pd.DataFrame) -> pd.DataFrame:
+#     df_cleaned = df.dropna()
+#
+#     return df_cleaned
 
-    return df_cleaned
+
+from typing import List, Union
 
 
-def preprocess_scope3(scope3_data: pd.DataFrame, parameters: Dict) -> pd.DataFrame:
-    """Preprocesses the Scope 3 data.
+def _remove_rows_with_missing_values(df: pd.DataFrame, columns: Union[str, List[str]] = None) -> pd.DataFrame:
+    """
+    Remove all rows containing missing values either from the whole DataFrame or from specific columns.
 
     Args:
-        scope3_data: Raw data.
-        
+        df (pd.DataFrame): Input DataFrame.
+        columns (Union[str, List[str]], optional): Column or list of columns to consider for row removal.
+                                                   If None, consider all columns. Default is None.
+
     Returns:
-        Preprocessed data, with missing values removed.
+        pd.DataFrame: DataFrame with rows containing missing values removed.
     """
-    
-    features = scope3_data[parameters["features"]]
-    preprocessed_data = _remove_missing_values(features)
-    return preprocessed_data
+
+    if columns is not None:
+        return df.dropna(subset=columns)
+    else:
+        return df.dropna()
 
 
-def _outlier_removal(df: pd.DataFrame) -> pd.DataFrame:
+from sklearn.ensemble import IsolationForest
+
+
+def _remove_outliers_isolation_forest(df: pd.DataFrame, contamination: float = 0.2) -> pd.DataFrame:
+    """
+    Remove outliers using the Isolation Forest algorithm.
+
+    Args:
+        df (pd.DataFrame): Input DataFrame with numerical columns.
+        contamination (float): Proportion of outliers in the dataset.
+
+    Returns:
+        pd.DataFrame: DataFrame with outliers removed.
+    """
+
     # Identify numerical columns
     numerical_cols = df.select_dtypes(include=['number']).columns
 
     # Initialize the IsolationForest model
-    clf = IsolationForest(contamination=0.2)  # contamination: proportion of outliers in the data set
+    clf = IsolationForest(contamination=contamination)
 
     # Fit the model on numerical columns
     clf.fit(df[numerical_cols])
@@ -42,6 +63,57 @@ def _outlier_removal(df: pd.DataFrame) -> pd.DataFrame:
     df_filtered = df[outlier_predictions == 1]
 
     return df_filtered
+
+
+# def preprocess_scope3(scope3_data: pd.DataFrame, parameters: Dict) -> pd.DataFrame:
+#     """Preprocesses the Scope 3 data.
+#
+#     Args:
+#         scope3_data: Raw data.
+#
+#     Returns:
+#         Preprocessed data, with missing values removed.
+#     """
+#
+#     features = scope3_data[parameters["features"]]
+#     preprocessed_data = _remove_missing_values(features)
+#     return preprocessed_data
+
+def preprocess_data(data: pd.DataFrame, parameters: Dict) -> pd.DataFrame:
+    """Preprocesses data.
+
+    Args:
+        data: Raw data.
+
+    Returns:
+        Preprocessed data, with missing values removed.
+    """
+    # Example
+    df = data[parameters["features"]]
+    df = _remove_rows_with_missing_values(df)
+    df = _remove_outliers_isolation_forest(df)
+    preprocessed_data = df
+
+    return preprocessed_data
+
+
+# def _outlier_removal(df: pd.DataFrame) -> pd.DataFrame:
+#     # Identify numerical columns
+#     numerical_cols = df.select_dtypes(include=['number']).columns
+#
+#     # Initialize the IsolationForest model
+#     clf = IsolationForest(contamination=0.2)  # contamination: proportion of outliers in the data set
+#
+#     # Fit the model on numerical columns
+#     clf.fit(df[numerical_cols])
+#
+#     # Get outlier predictions
+#     outlier_predictions = clf.predict(df[numerical_cols])
+#
+#     # Remove outliers from the original DataFrame based on the predictions
+#     df_filtered = df[outlier_predictions == 1]
+#
+#     return df_filtered
 
 
 def _remap_industry(df: pd.DataFrame) -> pd.DataFrame:
@@ -116,7 +188,7 @@ def feature_engineering(df: pd.DataFrame) -> pd.DataFrame:
         df_feature_engineered: DataFrame after feature engineering.
     """
 
-    df = _outlier_removal(df)
+    # df = _outlier_removal(df)
     df = _remap_industry(df)
     df = _create_interaction_terms(df)
     df = _create_polynomial_features(df)
