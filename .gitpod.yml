@@ -1,0 +1,2 @@
+tasks:
+  - init: chmod +x setup-miniconda.sh && ./setup-miniconda.sh && source ~/miniconda3/etc/profile.d/conda.sh && conda activate kedro-environment

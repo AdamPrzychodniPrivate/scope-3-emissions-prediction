@@ -9,6 +9,15 @@ Leveraging the [dataset](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=
 
 ## How to create a new virtual environment using conda
 
+mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm -rf ~/miniconda3/miniconda.sh
+
+~/miniconda3/bin/conda init bash
+
+kill the terminal and then 
+
 The recommended approach. From your terminal:
 ```
 conda create --name kedro-environment python=3.10 -y
