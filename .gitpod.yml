@@ -13,37 +13,9 @@ tasks:
       pip install kedro
       cd pipeline/
       pip install -r requirements.txt
+      pip install pyarrow fastparquet openpyxl
       pip install kedro-docker
       kedro docker init
       kedro docker build
-      pip install pyarrow fastparquet openpyxl
-
-# This I dont know why but in my venv I need to install additionaly pyarrow fastparquet openpyxl in Docker I dont have to, 
-# so I am installing it here not with requiremnts.txt because based on them docker is installing depenecies 
-
-# jetbrains:
-#   pycharm:
-#     plugins:
-#       - com.markskelton.one-dark-theme  
-#       - monokai-pro  
-#     prebuilds:
-#       version: stable  # Use the stable version for prebuilds
-
-# virtualenv venv
-# source venv/bin/activate
-# pip install --upgrade pip
-# pip install kedro 
-# cd pipeline/
-# pip install -r requirements.txt
-# kedro docker init
-# kedro docker build
-
-# pip install 'kedro<0.19.0,>=0.18.1' kedro-kubeflow kedro-docker
-# kedro new --starter=spaceflights
-# cd pipeline
-# echo kedro-kubeflow >> src/requirements*
-# kedro docker init
-# docker tag pipeline:latest remote.repo.url.com/pipeline:latest
 
 # pip uninstall s3fs
-# 
