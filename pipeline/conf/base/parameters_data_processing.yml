@@ -1,0 +1,17 @@
+feature_options:
+  features:
+    - Industry (Exiobase)
+    - Business Travel
+    - Capital Goods
+    - Downstream Leased Assets
+    - Downstream Transportation and Distribution
+    - Employee Commuting
+    - End of Life Treatment of Sold Products
+    - Fuel-and-energy-related activities (not included in Scope 1 or 2)
+    - Processing of Sold Products
+    - Purchased Goods and Services
+    - Upstream Leased Assets
+    - Upstream Transportation and Distribution
+    - Use of Sold Products
+    - Waste Generated in Operations
+    - Scope 3

@@ -1,17 +1,45 @@
-# Image of workspace. Learn more: https://www.gitpod.io/docs/configure/workspaces/workspace-image
+# Using this image because kedro works currently with python 3.11
 image: gitpod/workspace-python-3.11:latest
 
-# List the start up tasks. Learn more: https://www.gitpod.io/docs/configure/workspaces/tasks
 tasks:
-  - name: Script Task
-    init: echo 'init script' # runs during prebuild => https://www.gitpod.io/docs/configure/projects/prebuilds
-    command: echo 'start script'
+  - name: Setup .venv, install dependencies and build docker image for kedro pipeline
+    before: 
+      sudo apt-get update
+    command: |
+      sudo apt-get install tree
+      virtualenv venv
+      source venv/bin/activate
+      pip install --upgrade pip
+      pip install kedro
+      cd pipeline/
+      pip install -r requirements.txt
+      pip install kedro-docker
+      kedro docker init
+      kedro docker build
 
-# List the ports to expose. Learn more: https://www.gitpod.io/docs/configure/workspaces/ports
-ports:
-  - name: Frontend
-    description: Port 3000 for the frontend
-    port: 3000
-    onOpen: open-preview
+# jetbrains:
+#   pycharm:
+#     plugins:
+#       - com.markskelton.one-dark-theme  
+#       - monokai-pro  
+#     prebuilds:
+#       version: stable  # Use the stable version for prebuilds
 
-# Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
+# virtualenv venv
+# source venv/bin/activate
+# pip install --upgrade pip
+# pip install kedro 
+# cd pipeline/
+# pip install -r requirements.txt
+# kedro docker init
+# kedro docker build
+
+# pip install 'kedro<0.19.0,>=0.18.1' kedro-kubeflow kedro-docker
+# kedro new --starter=spaceflights
+# cd pipeline
+# echo kedro-kubeflow >> src/requirements*
+# kedro docker init
+# docker tag pipeline:latest remote.repo.url.com/pipeline:latest
+
+# pip uninstall s3fs
+# 
