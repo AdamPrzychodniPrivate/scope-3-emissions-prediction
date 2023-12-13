@@ -16,6 +16,10 @@ tasks:
       pip install kedro-docker
       kedro docker init
       kedro docker build
+      pip install pyarrow fastparquet openpyxl
+
+# This I dont know why but in my venv I need to install additionaly pyarrow fastparquet openpyxl in Docker I dont have to, 
+# so I am installing it here not with requiremnts.txt because based on them docker is installing depenecies 
 
 # jetbrains:
 #   pycharm:

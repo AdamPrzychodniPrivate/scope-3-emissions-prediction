@@ -68,7 +68,7 @@ import pandas as pd
 from typing import Any
 
 
-def split_data(data: pd.DataFrame, parameters: Dict) -> Tuple:
+def split_data_scope3(data: pd.DataFrame, parameters: Dict) -> Tuple:
     """Splits data into features and targets training and test sets.
 
     Args:
@@ -86,7 +86,7 @@ def split_data(data: pd.DataFrame, parameters: Dict) -> Tuple:
     return X_train, X_test, y_train, y_test
 
 
-def train_model(X_train: pd.DataFrame, y_train: pd.Series) -> Any:
+def train_model_scope3(X_train: pd.DataFrame, y_train: pd.Series) -> Any:
     """Trains the XGBoost model.
 
     Args:
@@ -113,7 +113,7 @@ def train_model(X_train: pd.DataFrame, y_train: pd.Series) -> Any:
     return model
 
 
-def evaluate_model(model: Any, X_test: pd.DataFrame, y_test: pd.Series):
+def evaluate_model_scope3(model: Any, X_test: pd.DataFrame, y_test: pd.Series):
     """Calculates and logs the coefficient of determination and RMSE.
 
     Args:

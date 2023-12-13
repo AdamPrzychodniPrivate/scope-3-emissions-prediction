@@ -110,22 +110,22 @@ data:
     sheet_name: 3%
 
 scope3_data_0:
-  type: pandas.ExcelDataSet
+  type: pandas.ExcelDataset
   filepath: data/01_raw/IWA-External-Scope-3-Data.xlsx
   load_args:
     sheet_name: 0%
 
 preprocessed_scope3:
-  type: pandas.ExcelDataSet
+  type: pandas.ExcelDataset
   filepath: data/02_intermediate/preprocessed_scope3.pq
 
 model_input_table_scope3:
-  type: pandas.ParquetDataSet
+  type: pandas.ParquetDataset
   filepath: data/03_primary/model_input_table_scope3.pq
 
 regressor_scope3:
-  type: pickle.PickleDataSet
-  filepath: data/06_models/regressor.pickle
+  type: pickle.PickleDataset
+  filepath: data/06_models/regressor_scope3.pickle
   versioned: true
 
 
