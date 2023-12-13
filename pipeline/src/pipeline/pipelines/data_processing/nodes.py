@@ -74,13 +74,6 @@ from typing import Dict
 from sklearn.ensemble import IsolationForest
 from sklearn.preprocessing import StandardScaler
 
-
-# def _remove_missing_values(df: pd.DataFrame) -> pd.DataFrame:
-#     df_cleaned = df.dropna()
-#
-#     return df_cleaned
-
-
 from typing import List, Union
 
 
@@ -136,20 +129,6 @@ def _remove_outliers_isolation_forest(df: pd.DataFrame, contamination: float = 0
     return df_filtered
 
 
-# def preprocess_scope3(scope3_data: pd.DataFrame, parameters: Dict) -> pd.DataFrame:
-#     """Preprocesses the Scope 3 data.
-#
-#     Args:
-#         scope3_data: Raw data.
-#
-#     Returns:
-#         Preprocessed data, with missing values removed.
-#     """
-#
-#     features = scope3_data[parameters["features"]]
-#     preprocessed_data = _remove_missing_values(features)
-#     return preprocessed_data
-
 def preprocess_data(data: pd.DataFrame, parameters: Dict) -> pd.DataFrame:
     """Preprocesses data.
 
@@ -159,32 +138,13 @@ def preprocess_data(data: pd.DataFrame, parameters: Dict) -> pd.DataFrame:
     Returns:
         Preprocessed data, with missing values removed.
     """
-    # Example
-    df = data[parameters["features"]]
+    features_and_target = parameters["features"] + parameters["target"]
+    df = data[features_and_target]
     df = _remove_rows_with_missing_values(df)
     df = _remove_outliers_isolation_forest(df)
     preprocessed_data = df
 
     return preprocessed_data
-
-
-# def _outlier_removal(df: pd.DataFrame) -> pd.DataFrame:
-#     # Identify numerical columns
-#     numerical_cols = df.select_dtypes(include=['number']).columns
-#
-#     # Initialize the IsolationForest model
-#     clf = IsolationForest(contamination=0.2)  # contamination: proportion of outliers in the data set
-#
-#     # Fit the model on numerical columns
-#     clf.fit(df[numerical_cols])
-#
-#     # Get outlier predictions
-#     outlier_predictions = clf.predict(df[numerical_cols])
-#
-#     # Remove outliers from the original DataFrame based on the predictions
-#     df_filtered = df[outlier_predictions == 1]
-#
-#     return df_filtered
 
 
 def _remap_industry(df: pd.DataFrame) -> pd.DataFrame:

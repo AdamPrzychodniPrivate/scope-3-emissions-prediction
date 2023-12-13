@@ -77,9 +77,9 @@ def split_data_scope3(data: pd.DataFrame, parameters: Dict) -> Tuple:
     Returns:
         Split data.
     """
-    # X = data[parameters["features"]]
-    X = data[parameters["features"]].drop("Scope 3", axis=1)
-    y = data["Scope 3"]
+    X = data[parameters["features"]]
+    # X = data[parameters["features"]].drop("Scope 3", axis=1)
+    y = data[parameters["target"]]
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=parameters["test_size"], random_state=parameters["random_state"]
     )

@@ -28,7 +28,6 @@ model_options_scope3:
     - Upstream Transportation and Distribution
     - Use of Sold Products
     - Waste Generated in Operations
-    - Scope 3
     - Use of Sold Products_x_Processing of Sold Products
     - Use of Sold Products_x_Purchased Goods and Services
     - Processing of Sold Products_x_Purchased Goods and Services
@@ -74,3 +73,5 @@ model_options_scope3:
     - Industry (Exiobase)_Retail trade, except of motor vehicles and motorcycles; repair of personal and household goods (52)
     - Industry (Exiobase)_Sea and coastal water transport
     - Industry (Exiobase)_Transport via railways
+  target:
+    - Scope 3
