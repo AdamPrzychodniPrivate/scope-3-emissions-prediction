@@ -126,4 +126,8 @@ regressor_scope3:
   filepath: data/06_models/regressor_scope3.pickle
   versioned: true
 
+visualize_industries_plot:
+  type: plotly.PlotlyDataSet
+  filepath: data/08_reporting/visualize_industries_plot.json
+  versioned: true
 

@@ -4,6 +4,7 @@ from .nodes import (
     compare_passenger_capacity_exp,
     compare_passenger_capacity_go,
     create_confusion_matrix,
+    visualize_industries,
 )
 
 
@@ -25,6 +26,11 @@ def create_pipeline(**kwargs) -> Pipeline:
                 func=create_confusion_matrix,
                 inputs="companies",
                 outputs="dummy_confusion_matrix",
+            ),
+            node(
+                func=visualize_industries,
+                inputs="data",
+                outputs="visualize_industries_plot",
             ),
         ]
     )

@@ -44,3 +44,40 @@ def create_confusion_matrix(companies: pd.DataFrame):
     )
     sn.heatmap(confusion_matrix, annot=True)
     return plt
+
+
+import pandas as pd
+import plotly.express as px
+
+def visualize_industries(companies: pd.DataFrame):
+    """
+    Creates a horizontal bar chart visualizing the number of companies in each industry.
+
+    Args:
+        companies: DataFrame containing a column 'Industry (Exiobase)' with industry names.
+
+    Returns:
+        A Plotly figure object representing the industry distribution.
+    """
+    if 'Industry (Exiobase)' not in companies:
+        raise ValueError("DataFrame must contain an 'Industry (Exiobase)' column")
+
+    # Count the number of occurrences for each industry
+    industry_counts = companies['Industry (Exiobase)'].value_counts()
+
+    # Create DataFrame for plotting
+    df_industry = pd.DataFrame({'Industry': industry_counts.index, 'Counts': industry_counts.values})
+
+    # Sort the DataFrame by 'Counts' in descending order
+    df_industry = df_industry.sort_values('Counts', ascending=False)
+
+    # Calculate plot height based on the number of industries
+    height = len(industry_counts) * 15  # Modify the multiplier to get the desired bar width
+
+    # Create the bar chart
+    fig = px.bar(df_industry, x='Counts', y='Industry', title='Number of Companies from Each Industry (Exiobase)', orientation='h', height=height)
+
+    # Reverse the order of categories on the y-axis
+    fig.update_yaxes(autorange="reversed")
+
+    return fig
