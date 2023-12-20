@@ -13,8 +13,8 @@ tasks:
       pip install kedro
       cd pipeline/
       pip install -r requirements.txt
-      pip install pyarrow fastparquet openpyxl
       pip install kedro-docker
+      pip install pyarrow fastparquet openpyxl
       kedro docker init
       kedro docker build
 
