@@ -14,8 +14,8 @@ tasks:
       cd pipeline/
       pip install -r requirements.txt
       pip install kedro-docker
-      pip install pyarrow fastparquet openpyxl
       kedro docker init
       kedro docker build
+      pip install pyarrow fastparquet openpyxl
 
 # pip uninstall s3fs
