@@ -6,6 +6,8 @@ kedro viz
 
 Run pipeline in Docker 
 
+pip install kedro-docker
+
 kedro docker init
 
 kedro docker build
