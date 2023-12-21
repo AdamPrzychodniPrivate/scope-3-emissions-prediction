@@ -20,5 +20,3 @@ tasks:
 
 ports:
   - port: 8888  # Default Jupyter Notebook port
-    onOpen: open-preview
-
