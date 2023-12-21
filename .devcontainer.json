@@ -1,0 +1,14 @@
+{
+    "name": "Python 3.11 Kedro Environment",
+    "image": "python:3.11",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": ["ms-python.python"]
+        }
+    },
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y tree && python -m venv /venv && source /venv/bin/activate && pip install --upgrade pip && pip install kedro pyarrow fastparquet openpyxl kedro-docker && cd pipeline && pip install -r requirements.txt && kedro docker init && kedro docker build"
+
+}
