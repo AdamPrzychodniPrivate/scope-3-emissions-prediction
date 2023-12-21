@@ -14,10 +14,12 @@ tasks:
       cd pipeline/
       pip install -r requirements.txt
       pip install kedro-docker
-      kedro docker init
-      kedro docker build
       pip install pyarrow fastparquet openpyxl
-      jupyter notebook --NotebookApp.allow_remote_access=True --NotebookApp.allow_origin='*' --NotebookApp.ip='0.0.0.0' --port=8888
+      jupyter lab --ServerApp.allow_remote_access=True --ServerApp.allow_origin='*' --ServerApp.ip='0.0.0.0' --port=8888 --ServerApp.token='' --ServerApp.disable_check_xsrf=True
+
+# pip uninstall s3fs
 
 ports:
   - port: 8888  # Default Jupyter Notebook port
+    onOpen: open-preview
+
