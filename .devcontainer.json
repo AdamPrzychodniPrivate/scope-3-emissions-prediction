@@ -9,5 +9,5 @@
             "extensions": ["ms-python.python"]
         }
     },
-    "postCreateCommand": "apt-get update && apt-get install -y tree && python -m venv /venv && source /venv/bin/activate && pip install --upgrade pip && pip install kedro pyarrow fastparquet openpyxl kedro-docker && cd pipeline && pip install -r requirements.txt && kedro docker init && kedro docker build"
+    "postCreateCommand": "bash ./setup.sh"
 }
